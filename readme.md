@@ -1,7 +1,7 @@
-#My Configurations
+# My Configurations
 
-##Summary
+## Summary
 just my personal confs :) 
 
-##Requirements
+## Requirements
 nerdtree
