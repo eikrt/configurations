@@ -1,18 +1,21 @@
+(package-initialize)
+(package-refresh-contents)
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
+(dolist (package '(use-package))
+   (unless (package-installed-p package)
+       (package-install package)))
+(dolist (package '(auto-complete paredit slime cider clojure-mode cdlatex bind-key evil goto-chg graphviz-dot-mode magit git-commit org-roam-server org-roam emacsql-sqlite3 emacsql org f dash rust-mode s simple-httpd transient undo-tree with-editor async))
+(unless (package-installed-p package)
+(package-install package))
+(require package))
+(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex) 
 (require 'org-roam-protocol)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c C-l") 'org-insert-link)
 (require 'evil)
 (evil-mode 1)
-
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
 (require 'rust-mode)
-
 (define-key evil-insert-state-map "j" #'cofi/maybe-exit)
 (evil-define-command cofi/maybe-exit ()
   :repeat change
@@ -51,13 +54,15 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
+ '(org-agenda-files (quote ("~/org-roam/study/math/mathematics.org")))
  '(package-selected-packages
    (quote
-    (magit org-roam rust-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (auto-complete paredit slime cider clojure-mode magit org-roam rust-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(show-paren-mode 1)
 (server-start)
