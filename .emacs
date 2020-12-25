@@ -9,12 +9,27 @@
 (unless (package-installed-p package)
 (package-install package))
 (require package))
-(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex) 
+(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
+(setq create-lockfiles nil) 
 (require 'org-roam-protocol)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c C-l") 'org-insert-link)
+
+(global-display-line-numbers-mode)
+
 (require 'evil)
 (evil-mode 1)
+(defun figwheel-repl ()
+  (interactive)
+  (inf-clojure "lein figwheel"))
+;(set-face-attribute 'default nil
+ ;                   :family "Source Code Pro"
+  ;                  :height 110
+   ;                 :weight 'normal
+    ;                :width 'normal)
+
+;(add-hook 'clojure-mode-hook #'inf-clojure-minor-mode)
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 (require 'rust-mode)
 (define-key evil-insert-state-map "j" #'cofi/maybe-exit)
 (evil-define-command cofi/maybe-exit ()
@@ -45,6 +60,7 @@
     (evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
     (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
 (load-theme 'dracula t)
+(setq org-latex-create-formula-image-program 'imagemagick)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -57,10 +73,13 @@
  '(custom-safe-themes
    (quote
     ("7451f243a18b4b37cabfec57facc01bd1fe28b00e101e488c61e1eed913d9db9" default)))
+ '(elfeed-feeds
+   (quote
+    ("https://feeds.yle.fi/uutiset/v1/majorHeadlines/YLE_UUTISET.rss" "https://www.reddit.com/r/dota2/.rss" "https://feeds.yle.fi/uutiset/v1/recent.rss?pub" "https://www.reddit.com/r/programming/.rss" "https://www.reddit.com/r/javascript/.rss" "https://www.reddit.com/r/clojure/.rss" "https://www.reddit.com/r/Linux/.rss" "https://www.reddit.com/r/webdev/.rss" "https://www.reddit.com/r/news/.rss" "https://www.reddit.com/r/worldnews/.rss")))
  '(org-agenda-files (quote ("~/org-roam/study/math/mathematics.org")))
  '(package-selected-packages
    (quote
-    (dracula-theme auto-complete paredit slime cider clojure-mode magit org-roam rust-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (javaimp vue-mode web-mode elfeed latex-math-preview inf-clojure dracula-theme auto-complete paredit slime cider clojure-mode magit org-roam rust-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
