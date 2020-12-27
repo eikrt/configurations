@@ -1,36 +1,37 @@
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
+; general 
+
 (package-initialize)
 (package-refresh-contents)
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(dolist (package '(use-package))
-   (unless (package-installed-p package)
-       (package-install package)))
-(dolist (package '(auto-complete paredit slime cider clojure-mode cdlatex bind-key evil goto-chg graphviz-dot-mode magit git-commit org-roam-server org-roam emacsql-sqlite3 emacsql org f dash rust-mode s simple-httpd transient undo-tree with-editor async))
-(unless (package-installed-p package)
-(package-install package))
-(require package))
-(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
-(setq create-lockfiles nil) 
+(setq create-lockfiles nil) ; this is because react hot reloading messing up with lockfiles
+
+
+; rust
+
+ 
+(require 'rust-mode)
+
+; org
+
 (require 'org-roam-protocol)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c C-l") 'org-insert-link)
-
 (global-display-line-numbers-mode)
 
-(require 'evil)
-(evil-mode 1)
+
 (defun figwheel-repl ()
   (interactive)
   (inf-clojure "lein figwheel"))
-;(set-face-attribute 'default nil
- ;                   :family "Source Code Pro"
-  ;                  :height 110
-   ;                 :weight 'normal
-    ;                :width 'normal)
 
-;(add-hook 'clojure-mode-hook #'inf-clojure-minor-mode)
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
-(require 'rust-mode)
+
+
+; evil mode 
+
+(require 'evil)
+(evil-mode 1)
 (define-key evil-insert-state-map "j" #'cofi/maybe-exit)
 (evil-define-command cofi/maybe-exit ()
   :repeat change
@@ -47,6 +48,8 @@
     (push 'escape unread-command-events))
        (t (setq unread-command-events (append unread-command-events
                           (list evt))))))))
+; neotree
+
 (add-to-list 'load-path "~/.emacs.d/packages/neotree")
   (require 'neotree)
   (global-set-key [f1] 'neotree-toggle)
@@ -59,8 +62,21 @@
     (evil-define-key 'normal neotree-mode-map (kbd "p") 'neotree-previous-line)
     (evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
     (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
+
+
+; theme
+
 (load-theme 'dracula t)
+
+; latex
+
+(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
 (setq org-latex-create-formula-image-program 'imagemagick)
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+
+
+; generated things
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
