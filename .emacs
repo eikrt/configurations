@@ -6,6 +6,7 @@
 (package-refresh-contents)
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(exec-path-from-shell-initialize)
 (setq create-lockfiles nil) ; this is because react hot reloading messing up with lockfiles
 
 
