@@ -1,5 +1,5 @@
 # Configurations
-my personal configurations for various software
+my personal configurations for various software and useful scripts
 ## Some Details
 .vimrc:
 	double j for insert mode
@@ -11,4 +11,3 @@ my personal configurations for various software
 
 
 	
->>>>>>> 859f9c40854edec0a4ec04c4b5f98a1e6e4fd629
