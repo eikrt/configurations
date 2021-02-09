@@ -76,6 +76,8 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+export PATH="repo/configurations/tools:$PATH"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
