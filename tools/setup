@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+echo "installing programs"
+sudo apt install emacs vim htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "changing shell"
+chsh -s $(which zsh)
+
+
+echo "creating symbolic links"
+ln -s $HOME/repo/configurations/.zshrc $HOME/.zshrc
+ln -s $HOME/repo/configurations/.vimrc $HOME/.vimrc
+ln -s $HOME/repo/configurations/.emacs $HOME/.emacs
+
