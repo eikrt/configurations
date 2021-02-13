@@ -2,7 +2,7 @@
 
 
 echo "installing programs"
-sudo apt install emacs vim htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp
+sudo apt install emacs vim htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp imagemagick
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "changing shell"
