@@ -12,34 +12,34 @@ my personal configurations for various software and useful scripts
 
 ## Tools
 
-* battery
+### battery
 
 shows battery information
 
-* br
+### br
 
 finds screen devices and sets brightness from parameter
 
-* hw
+### hw
 
 copies whatsapp downloads from Downloads directory, moves them and bakes a pdf from them. sends images to trash afterwards
 
-* pullall
+###  pullall
 
 iterates directories from ~/repo and git pulls them
 
-* save
+### save
 
 screensaver
 
-* setup
+### setup
 
 setup script for a new machine. installs programs, creates symlinks, changes shell etc.
 
-* sign
+###  sign
 
 cowsay clone :)
 
-* trash
+### trash
 
 safer alternative to rm. moves files to ~/trash
