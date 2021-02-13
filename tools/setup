@@ -12,5 +12,7 @@ chsh -s $(which zsh)
 echo "creating symbolic links"
 ln -s $HOME/repo/configurations/.zshrc $HOME/.zshrc
 ln -s $HOME/repo/configurations/.vimrc $HOME/.vimrc
-ln -s $HOME/repo/configurations/.emacs $HOME/.emacs
 
+ln -s $HOME/repo/configurations/.emacs $HOME/.emacs
+mkdir -p $HOME/.config/autostart
+ln -s $HOME/repo/configurations/autostart.desktop $HOME/.config/autostart/autostart.desktop

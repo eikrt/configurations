@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+emacs &
+chromium-browser &
+xfce4-terminal &

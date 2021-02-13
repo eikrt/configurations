@@ -3,4 +3,4 @@
 
 mkdir -p $HOME/homework
 
-mv $HOME/Downloads/WhatsApp* $HOME/homework && convert $HOME/homework/* && $HOME/homework/homework.pdf && ./trash $HOME/homework/WhatsApp*
+mv $HOME/Downloads/WhatsApp* $HOME/homework && convert $HOME/homework/* $HOME/homework/homework.pdf && rm $HOME/homework/WhatsApp*
