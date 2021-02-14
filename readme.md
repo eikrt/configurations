@@ -43,3 +43,7 @@ cowsay clone :)
 ### trash
 
 safer alternative to rm. moves files to ~/trash
+
+### shorty
+
+shortcut script. takes shortcuts from shorty directory and puts them into .zshrc

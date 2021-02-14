@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+awk -F'[, ]' '{for(i=2;i<=NF;i++){ print "alias "$1"=\""cd""$i"\""}} ' ../shorty/shortcuts.csv >> "$HOME/.zshrc"
+
