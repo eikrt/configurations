@@ -110,5 +110,6 @@ export PATH="repo/configurations/tools:$PATH"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # shorty aliases
-alias r="$HOME/repo"
-alias c="$HOME/repo/configurations"
+alias r="$HOME/repo" # SHORTY
+alias c="$HOME/repo/configurations" # SHORTY
+alias w="$HOME/repo/eikrt.github.io" # SHORTY

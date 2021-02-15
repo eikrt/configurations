@@ -12,8 +12,9 @@ chsh -s $(which zsh)
 echo "creating symbolic links"
 ln -s $HOME/repo/configurations/.zshrc $HOME/.zshrc
 ln -s $HOME/repo/configurations/.vimrc $HOME/.vimrc
-
 ln -s $HOME/repo/configurations/.emacs $HOME/.emacs
+sudo rm /etc/ImageMagick-6/policy.xml
+sudo ln -s $HOME/repo/configurations/policy.xml /etc/ImageMagick-6/policy.xml
 
 echo "configuring xfce4 autostart"
 mkdir -p $HOME/.config/autostart

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 device=$(xrandr -q |grep ".*\ connected" |grep -o "^.*[A-Z][-][0-9]")
 while IFS= read -r line; do
