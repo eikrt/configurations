@@ -2,8 +2,11 @@
 
 
 echo "installing programs"
-sudo apt install emacs vim htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp imagemagick texlive-full
+sudo apt install emacs vim htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp imagemagick texlive-full newsboat
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "loading feeds"
+git clone ssh://git@github.com/eikrt/feeds
 
 echo "changing shell"
 chsh -s $(which zsh)
