@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export PATH="$HOME/repo/configurations/tools:$PATH"
 #ZSH_THEME="dracula"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -79,7 +80,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-export PATH="repo/configurations/tools:$PATH"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -106,9 +106,12 @@ export PATH="repo/configurations/tools:$PATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+tmux attach &> /dev/null
 
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux -2
+fi
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # shorty aliases
 alias r="$HOME/repo" # SHORTY
 alias c="$HOME/repo/configurations" # SHORTY

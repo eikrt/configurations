@@ -2,8 +2,22 @@
 
 
 echo "installing programs"
-sudo apt install emacs vim htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp imagemagick texlive-full newsboat
+sudo apt install emacs vim htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp imagemagick texlive-full newsboat python3-pip tmux
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo -H pip3 install --upgrade youtube-dl
+
+echo "installing go"
+curl -O https://storage.googleapis.com/golang/go1.12.9.linux-amd64.tar.gz
+sha256sum go1.12.9.linux-amd64.tar.gz
+tar -xvf go1.12.9.linux-amd64.tar.gz
+sudo chown -R root:root ./go
+sudo mv go /usr/local
+echo "export GOPATH=$HOME/go" >> $HOME/.profile
+echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> $HOME/.profile
+source $HOME/.profile
+
+go get github.com/ericchiang/pup
+
 
 echo "loading feeds"
 git clone ssh://git@github.com/eikrt/feeds
@@ -16,7 +30,8 @@ echo "creating symbolic links"
 ln -s $HOME/repo/configurations/.zshrc $HOME/.zshrc
 ln -s $HOME/repo/configurations/.vimrc $HOME/.vimrc
 ln -s $HOME/repo/configurations/.emacs $HOME/.emacs
-ln -s $HOME/repo/configurations/terminalrc .config/xfce4/terminal
+ln -s $HOME/repo/configurations/terminalrc $HOME/.config/xfce4/terminal
+ln -s $HOME/repo/configurations/.tmux.conf $HOME/.tmux.conf
 sudo rm /etc/ImageMagick-6/policy.xml
 sudo ln -s $HOME/repo/configurations/policy.xml /etc/ImageMagick-6/policy.xml
 
