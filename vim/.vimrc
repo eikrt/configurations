@@ -1,4 +1,4 @@
 set number
 syntax on
-source $HOME/repo/configurations/plugins.vim
-source $HOME/repo/configurations/maps.vim
+source $HOME/repo/configurations/vim/plugins.vim
+source $HOME/repo/configurations/vim/maps.vim
