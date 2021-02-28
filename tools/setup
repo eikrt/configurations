@@ -34,14 +34,14 @@ chsh -s $(which zsh)
 
 
 echo "creating symbolic links"
-ln -s $HOME/repo/configurations/.zshrc $HOME/.zshrc
-ln -s $HOME/repo/configurations/.vimrc $HOME/.vimrc
-ln -s $HOME/repo/configurations/.emacs $HOME/.emacs
-ln -s $HOME/repo/configurations/terminalrc $HOME/.config/xfce4/terminal
-ln -s $HOME/repo/configurations/.tmux.conf $HOME/.tmux.conf
-sudo rm /etc/ImageMagick-6/policy.xml
-sudo ln -s $HOME/repo/configurations/policy.xml /etc/ImageMagick-6/policy.xml
+ln -s $HOME/repo/configurations/zsh/.zshrc $HOME/.zshrc
+ln -s $HOME/repo/configurations/vim/.vimrc $HOME/.vimrc
+ln -s $HOME/repo/configurations/emacs/.emacs $HOME/.emacs
+ln -s $HOME/repo/configurations/misc/terminalrc $HOME/.config/xfce4/terminalrc
+ln -s $HOME/repo/configurations/tmux/.tmux.conf $HOME/.tmux.conf
+sudo rm /etc/ImageMagick-6/imagemagick/policy.xml
+sudo ln -s $HOME/repo/configurations/imagemagick/policy.xml /etc/ImageMagick-6/policy.xml
 
 echo "configuring xfce4 autostart"
 mkdir -p $HOME/.config/autostart
-ln -s $HOME/repo/configurations/autostart.desktop $HOME/.config/autostart/autostart.desktop
+ln -s $HOME/repo/configurations/autostart/autostart.desktop $HOME/.config/autostart/autostart.desktop
