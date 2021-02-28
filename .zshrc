@@ -108,9 +108,9 @@ alias l='ls -CF'
 
 tmux attach &> /dev/null
 
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux -2
-fi
+#if [[ ! $TERM =~ screen ]]; then
+#    exec tmux -2
+#fi
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # shorty aliases
 alias r="$HOME/repo" # SHORTY

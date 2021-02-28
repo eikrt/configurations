@@ -1,3 +1,4 @@
 set number
-:imap jj <ESC>
 syntax on
+source $HOME/repo/configurations/plugins.vim
+source $HOME/repo/configurations/maps.vim

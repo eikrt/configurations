@@ -1,5 +1,5 @@
 #!/bin/bash
 
-emacs &
+# emacs &
 chromium-browser &
 xfce4-terminal &
