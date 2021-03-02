@@ -2,7 +2,7 @@
 
 
 echo "installing programs"
-sudo apt install emacs vim nvim htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp imagemagick texlive-full newsboat python3-pip tmux
+sudo apt install emacs vim nvim curl htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp imagemagick texlive-full newsboat python3-pip tmux nodejs npm
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #pip installs
