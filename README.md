@@ -1,5 +1,7 @@
 # Configurations
-my personal configurations for various software and useful scripts
+
+my configurations and scripts
+
 ## Some Details
 .vimrc:
 	double j for insert mode
@@ -47,3 +49,23 @@ safer alternative to rm. moves files to ~/trash
 ### shorty
 
 shortcut script. takes shortcuts from shorty directory and puts them into .zshrc
+
+### dolly
+
+gets github repos and allows to choose which one to pull
+
+### njp
+
+new java project. generates boilerplate for new main class
+
+### start-emacsclient.sh
+
+starts emascs client
+
+### backup
+
+backup script
+
+### nscr
+
+script to create new scripts. creates while and opens it in vim
