@@ -1,6 +1,8 @@
 #!/bin/bash
+# official github api is recommended, this script gets data with wget. dont try this at home
 
-repos=$(wget -qO - https://github.com/eikrt\?tab\=repositories |grep codeRepository |awk '{print $2}' |sed -e "s/href=\"\/eikrt\///" -e s/"\""//)
+repos=$(wget -qO - https://github.com/eikrt\?tab\=repositories |grep codeRepository |awk '{print $2}' |sed -e "s/href=\"\/eikrt\///" -e s/"\""//) # finds repositories from github
+
 
 index=1
 

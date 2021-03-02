@@ -17,5 +17,6 @@ let g:coc_global_extensions = [
 	      \'coc-java',
 	      \'coc-html',
 	      \'coc-css',
+	      \'coc-sh',
 	      \'coc-json'
 	      \]

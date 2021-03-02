@@ -4,5 +4,5 @@ echo "enter class name"
 read name
 echo "public class $name {" > $name.java
 echo "public static void main (String[] args) {" >> $name.java
-echo "}" >> name.java
-echo "}" >> name.java
+echo "}" >> $name.java
+echo "}" >> $name.java
