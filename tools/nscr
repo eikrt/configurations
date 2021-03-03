@@ -3,6 +3,7 @@
 
 touch $HOME/repo/configurations/tools/$1
 echo "#!/bin/bash" >> $HOME/repo/configurations/tools/$1
+chmod +x $HOME/repo/configurations/tools/$1
 vim $HOME/repo/configurations/tools/$1
 
 
