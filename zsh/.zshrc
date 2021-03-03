@@ -116,3 +116,4 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias r="$HOME/repo" # SHORTY
 alias c="$HOME/repo/configurations" # SHORTY
 alias w="$HOME/repo/eikrt.github.io" # SHORTY
+alias t="$HOME/repo/configurations/tools" # SHORTY

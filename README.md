@@ -87,3 +87,7 @@ script to create new scripts. creates while and opens it in vim
 ### findbrokensymlinks
 
 finds broken symlinks
+
+### shedit
+
+shorty edit. opens shorty csv in vim

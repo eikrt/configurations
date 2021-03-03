@@ -1,0 +1,4 @@
+#!/bin/bash
+
+SHORTY_DIR=$HOME/repo/configurations/shorty
+vim $SHORTY_DIR/shortcuts.csv
