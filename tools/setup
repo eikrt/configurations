@@ -9,7 +9,7 @@ then
 read
 fi
 
-sudo apt install emacs vim nvim curl htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp imagemagick texlive-full newsboat python3-pip tmux nodejs npm
+sudo apt install emacs vim nvim curl htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp imagemagick texlive-full newsboat python3-pip tmux nodejs npm xwallpaper
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
@@ -83,3 +83,11 @@ fi
 echo "configuring xfce4 autostart"
 mkdir -p $HOME/.config/autostart
 ln -s $HOME/repo/configurations/autostart/autostart.desktop $HOME/.config/autostart/autostart.desktop
+
+if [[ $1 = "--ask" || $1 = "-a" ]]
+then
+read
+fi
+
+echo "setting desktop background"
+xwallpaper --zoom $HOME/repo/configurations/media/bg/juna.png

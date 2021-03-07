@@ -2,12 +2,18 @@
 
 my configurations and scripts
 
-## Some Details
+
+## Media
+
+background images by Niilo Korte
+
+## vim
 .vimrc:
 	double j for insert mode
 	key maps are in maps.vim and
 	plugin stuff are in plugins.vim
 	.vimrc_win is vimrc for windows
+## emacs
 
 .emacs:
 	evil mode
@@ -91,3 +97,7 @@ finds broken symlinks
 ### shedit
 
 shorty edit. opens shorty csv in vim
+
+### htmltemplate
+
+generates html boilerplate
