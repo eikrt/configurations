@@ -112,6 +112,7 @@ tmux attach &> /dev/null
 #    exec tmux -2
 #fi
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # shorty aliases
 alias r="$HOME/repo" # SHORTY
 alias c="$HOME/repo/configurations" # SHORTY
