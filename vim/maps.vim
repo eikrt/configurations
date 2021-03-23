@@ -1,8 +1,7 @@
 " custom keybinds
-
 :imap jj <ESC>
-:map <F2> :Explore <CR>
-:map <F3> :NERDTreeToggle<CR>
+:map <C-E> :Explore <CR>
+:map <C-T> :NERDTreeToggle<CR>
 " tab complete
 function! s:check_back_space() abort
   let col = col('.') - 1
