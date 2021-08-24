@@ -2,6 +2,7 @@
 :imap jj <ESC>
 :map <C-E> :Explore <CR>
 :map <C-T> :NERDTreeToggle<CR>
+nnoremap <silent> <C-f> :Files<CR>
 set backspace=indent,eol,start
 " tab complete
 function! s:check_back_space() abort

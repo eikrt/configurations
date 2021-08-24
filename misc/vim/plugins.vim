@@ -4,12 +4,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 	endif
 call plug#begin()
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
-
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'dracula/vim', {'as':'dracula'}
 call plug#end()
-
+packadd! dracula | colorscheme dracula
 let g:coc_global_extensions = [
 	      \'coc-go',
 	      \'coc-python',
