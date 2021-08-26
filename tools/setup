@@ -1,0 +1,93 @@
+#!/bin/bash
+
+
+
+echo "installing programs"
+
+if [[ $1 = "--ask" || $1 = "-a" ]]
+then
+read
+fi
+
+sudo apt install emacs vim nvim curl htop ranger neofetch cmatrix zsh zsh-syntax-highlighting gimp chromium-browser gimp imagemagick texlive-full newsboat python3-pip tmux nodejs npm xwallpaper
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+if [[ $1 = "--ask" || $1 = "-a" ]]
+then
+read
+fi
+
+#pip installs
+sudo -H pip3 install --upgrade youtube-dl
+sudo pip3 install -U jedi
+#echo "setting up neovim"
+#mkdir -p $HOME/.config/nvim
+#ln -s $HOME/repo/configurations/init.vim $HOME/.config/nvim/init.vim
+#sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+if [[ $1 = "--ask" || $1 = "-a" ]]
+then
+read
+fi
+
+echo "installing go"
+curl -O https://storage.googleapis.com/golang/go1.12.9.linux-amd64.tar.gz
+sha256sum go1.12.9.linux-amd64.tar.gz
+tar -xvf go1.12.9.linux-amd64.tar.gz
+sudo chown -R root:root ./go
+sudo mv go /usr/local
+echo "export GOPATH=$HOME/go" >> $HOME/.profile
+echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> $HOME/.profile
+source $HOME/.profile
+
+go get github.com/ericchiang/pup
+
+
+
+if [[ $1 = "--ask" || $1 = "-a" ]]
+then
+read
+fi
+
+echo "loading feeds"
+git clone ssh://git@github.com/eikrt/feeds
+
+if [[ $1 = "--ask" || $1 = "-a" ]]
+then
+read
+fi
+
+echo "changing shell"
+chsh -s $(which zsh)
+
+if [[ $1 = "--ask" || $1 = "-a" ]]
+then
+read
+fi
+
+echo "creating symbolic links"
+ln -s $HOME/repo/configurations/zsh/.zshrc $HOME/.zshrc
+ln -s $HOME/repo/configurations/vim/.vimrc $HOME/.vimrc
+ln -s $HOME/repo/configurations/emacs/.emacs $HOME/.emacs
+ln -s $HOME/repo/configurations/misc/terminalrc $HOME/.config/xfce4/terminalrc
+ln -s $HOME/repo/configurations/tmux/.tmux.conf $HOME/.tmux.conf
+sudo rm /etc/ImageMagick-6/imagemagick/policy.xml
+sudo ln -s $HOME/repo/configurations/imagemagick/policy.xml /etc/ImageMagick-6/policy.xml
+
+if [[ $1 = "--ask" || $1 = "-a" ]]
+then
+read
+fi
+
+echo "configuring xfce4 autostart"
+mkdir -p $HOME/.config/autostart
+ln -s $HOME/repo/configurations/autostart/autostart.desktop $HOME/.config/autostart/autostart.desktop
+
+if [[ $1 = "--ask" || $1 = "-a" ]]
+then
+read
+fi
+
+echo "setting desktop background"
+xwallpaper --zoom $HOME/repo/configurations/media/bg/juna.png

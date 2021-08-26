@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cdir=$(pwd)
+touch $cdir/$1
+
+echo "<!doctype html>\" 
+<html lang=\"en\">\"
+<head>\"
+<meta charset=\"utf-8\">
+<link rel=\"stylesheet\" href=\"css/style.css">
+
+</head>
+
+<body>
+<script src=\"js/scripts.js\"></script>
+</body>
+</html>" >> $cdir/$1
+

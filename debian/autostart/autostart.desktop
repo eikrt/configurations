@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=startup
+Exec=/home/eino/repo/configurations/tools/startup
+StartupNotify=false
+Terminal=false
+Comment=
+RunHook=0
+
