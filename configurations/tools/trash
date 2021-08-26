@@ -1,0 +1,7 @@
+#!/bin/bash
+
+TRASH_DIR="$HOME/trash"
+
+mkdir -p "$TRASH_DIR"
+
+mv "$1" "$TRASH_DIR" 

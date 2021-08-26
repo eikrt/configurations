@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+grep -v "SHORTY" $HOME/.zshrc > $HOME/.zshrc_buffer
+cat $HOME/.zshrc_buffer > $HOME/.zshrc
+awk -F'[, ]' '{for(i=2;i<=NF;i++){ print "alias "$1"=\""cd""$i"\" # SHORTY"}}' ../shorty/shortcuts.csv >> "$HOME/.zshrc"
+source $HOME/.zshrc
