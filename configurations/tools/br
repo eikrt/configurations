@@ -1,0 +1,6 @@
+#!/bin/bash
+
+device=$(xrandr -q |grep ".*\ connected" |grep -o "^.*[A-Z][-][0-9]") # finds connected screen devices
+while IFS= read -r line; do # sets brightness from parameter to all devices
+    xrandr --output $line --brightness $1
+done <<< "$device"

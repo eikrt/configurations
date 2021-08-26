@@ -1,0 +1,15 @@
+[Unit]
+Description=startup script
+
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/eino/repo/configurations/tools/startup
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
