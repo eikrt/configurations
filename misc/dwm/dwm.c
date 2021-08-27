@@ -20,6 +20,7 @@
  *
  * To understand everything else, start reading main().
  */
+#include <math.h>
 #include <errno.h>
 #include <locale.h>
 #include <signal.h>
@@ -57,6 +58,7 @@
 #define TAGMASK                 ((1 << LENGTH(tags)) - 1)
 #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
 #define BAR_HEIGHT 18
+#define GAP_SIZE 16
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
 enum { SchemeNorm, SchemeSel }; /* color schemes */
@@ -1717,6 +1719,7 @@ tile(Monitor *m)
 void
 togglebar(const Arg *arg)
 {
+
 	selmon->showbar = !selmon->showbar;
 	updatebarpos(selmon);
 	XMoveResizeWindow(dpy, selmon->barwin, selmon->wx, selmon->by, selmon->ww, bh);
@@ -1901,10 +1904,10 @@ updategeom(void)
 				{
 					dirty = 1;
 					m->num = i;
-					m->mx = m->wx = unique[i].x_org;
-					m->my = m->wy = unique[i].y_org + BAR_HEIGHT;
-					m->mw = m->ww = unique[i].width;
-					m->mh = m->wh = unique[i].height - BAR_HEIGHT;
+					m->mx = m->wx = unique[i].x_org + GAP_SIZE;
+					m->my = m->wy = unique[i].y_org + BAR_HEIGHT + GAP_SIZE;
+					m->mw = m->ww = unique[i].width - GAP_SIZE*2;
+					m->mh = m->wh = unique[i].height - BAR_HEIGHT - GAP_SIZE*2;
 					updatebarpos(m);
 				}
 		} else { /* less monitors available nn < n */
@@ -2053,6 +2056,16 @@ updatewmhints(Client *c)
 void
 view(const Arg *arg)
 {
+
+
+	FILE *fptr;
+	fptr = fopen("/tmp/tag", "w");
+	if (fptr == NULL) {
+		printf("Error opening /tmp/tag");
+		exit(1);
+	}
+	fprintf(fptr, "%i", (int) arg->ui);
+       	fclose(fptr);
 	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
 		return;
 	selmon->seltags ^= 1; /* toggle sel tagset */
