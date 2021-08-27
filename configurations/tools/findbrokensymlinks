@@ -1,3 +1,0 @@
-#!/bin/bash
-
-find $HOME -type l -exec test ! -e {} \; -print

@@ -1,2 +1,0 @@
-setxkbmap fi
-exec dwm
