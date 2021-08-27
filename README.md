@@ -5,7 +5,12 @@ my configurations and scripts
 
 ## Media
 
-background images by Niilo Korte
+pixel art background images by Niilo Korte
+other images from Wikimedia Commons
+
+## Dependencies
+
+compton, feh, acpi, lemonbar
 
 ## Applications
 
