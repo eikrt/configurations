@@ -1,69 +1,69 @@
 # SCRIPTS
 
-## battery
+## BATTERY
 
 shows battery information
 
-## br
+## BR
 
 finds screen devices and sets brightness from parameter
 
-## hw
+## HW
 
 copies whatsapp downloads from Downloads directory, moves them and bakes a pdf from them. sends images to trash afterwards
 
-##  pullall
+## PULLALL
 
-iterates directories from ~/repo and git pulls them
+Iterates directories from *~/repo/* and ```git``` pulls them
 
-## save
+## SAVE
 
-screensaver
+Screensaver
 
-## setup
+## SETUP
 
-setup script for a new machine. installs programs, creates symlinks, changes shell etc.
+Setup script for a new machine. installs programs, creates symlinks, changes shell etc.
 
-##  sign
+## SIGN
 
-cowsay clone :)
+Cowsay clone :)
 
-## trash
+## TRASH
 
-safer alternative to rm. moves files to ~/trash
+Safer alternative to ```rm```. moves files to *~/trash*
 
-## shorty
+## SHORTY
 
-shortcut script. takes shortcuts from shorty directory and puts them into .zshrc
+A shortcut script. takes shortcuts from shorty directory and puts them into ```.zshrc```
 
-## dolly
+## DOLLY
 
-gets github repos and allows to choose which one to pull
+Gets **Github** repos and allows to choose which one to pull
 
-## njp
+## NJP
 
-new java project. generates boilerplate for new main class
+Generates boilerplate for new main ```Java``` class.
 
-## start-emacsclient.sh
+## START-EMACSCLIENT.SH
 
-starts emascs client
+Starts ```emacs``` client
 
-## backup
+## BACKUP
 
-backup script
+Backup script
 
-## nscr
+## NSCR
 
-script to create new scripts. creates while and opens it in vim
+A script to create new scripts. creates while and opens it in ```vim```
 
-## findbrokensymlinks
+## FINDBROKENSYMLINKS
 
-finds broken symlinks
+Finds broken symlinks
 
-## shedit
+## SHEDIT
 
-shorty edit. opens shorty csv in vim
+Shorty edit. Opens shorty csv in ```vim```
 
-## htmltemplate
+## HTMLTEMPLATE
 
 generates html boilerplate

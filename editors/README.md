@@ -1,16 +1,18 @@
-### vim
+# EDITORS
 
-.vimrc:
+## VIM
 
-	double j for insert mode
+```.vimrc```:
+
 	key maps are in maps.vim and
 	plugin stuff are in plugins.vim
 	.vimrc_win is vimrc for windows
 
-### emacs
 
-.emacs:
+## EMACS
+
+```.emacs```:
 	evil mode
 	double j for insert mode
-	if org-latex-preview doesn't work, install texlive-full via system's package manager and imagemagick
+	if ```org-latex-preview``` doesn't work, install ```texlive-full``` and ```imagemagick``` via system's package manager
 
