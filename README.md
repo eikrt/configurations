@@ -2,7 +2,7 @@
 
 My configurations and scripts
 
-![Desktop Image](https://github.com/eikrt/configurations/media/desktop2882020.png)
+![Desktop Image](https://github.com/eikrt/configurations/blob/main/media/screenshots/desktop2882020.png)
 
 (more info in subdirectory READMEs)
 

@@ -8,7 +8,6 @@
 	plugin stuff are in plugins.vim
 	.vimrc_win is vimrc for windows
 
-
 ## EMACS
 
 ```.emacs```:
