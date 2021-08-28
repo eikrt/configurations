@@ -8,8 +8,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'dracula/vim', {'as':'dracula'}
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
 call plug#end()
+
+
+autocmd VimEnter * RainbowParentheses
 packadd! dracula | colorscheme dracula
 let g:coc_global_extensions = [
 	      \'coc-go',
