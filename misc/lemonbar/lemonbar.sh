@@ -24,6 +24,21 @@ ActiveWindow(){
 	fi
 }
 
+Cpu(){
+    c=$(top -bn1 | grep "Cpu(s)" | \
+           sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | \
+           awk '{print 100 - $1}')
+    line="    "
+    printf "${line:${#c}}""%s %s" $c%
+
+
+}
+Memory(){
+     mem=$(free | grep Mem | awk '{print $3/$2 * 100.0}')
+     memp=${mem:0:-2}%
+     line="       "
+     printf "${line:${#memp}}""%s %s" $memp
+}
 Workspaces () {
 	TAG=$(cat /tmp/tag)
 	
@@ -53,7 +68,7 @@ Workspaces () {
 
 	while true; do
 
-		echo -e "%{l} %{F#000000}%{B#d19a3f} $(Workspaces) %{r}%{F#000000}%{B#d19a3f} $(ActiveWindow) | $(Battery) | $(Clock) %{F-}%{B-}"
+		echo -e "%{l} %{F#000000}%{B#d19a3f} $(Workspaces) %{r}%{F#000000}%{B#d19a3f} | $(ActiveWindow) | Mem: $(Memory) | CPU: $(Cpu) | Bat: $(Battery) | $(Clock) %{F-}%{B-}"
 			        sleep 1
 			done | \
 			lemonbar -d  \
