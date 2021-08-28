@@ -2,15 +2,15 @@
 
 ## BATTERY
 
-shows battery information
+Shows battery information
 
 ## BR
 
-finds screen devices and sets brightness from parameter
+Finds screen devices and sets brightness from parameter
 
 ## HW
 
-copies whatsapp downloads from Downloads directory, moves them and bakes a pdf from them. sends images to trash afterwards
+Copies **Whatsapp** downloads from *Downloads* directory, moves them and bakes a ```pdf``` from them. sends images to trash afterwards
 
 ## PULLALL
 
