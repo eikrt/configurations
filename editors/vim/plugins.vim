@@ -11,7 +11,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
 call plug#end()
 
 
