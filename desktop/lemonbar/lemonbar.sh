@@ -4,7 +4,6 @@ width=1920
 height=18
 x=0
 y=0
-
 Clock() {
 	        DATETIME=$(date "+%a %b %d, %T")
 		        echo -n "$DATETIME"
@@ -40,8 +39,7 @@ Memory(){
      printf "${line:${#memp}}""%s %s" $memp
 }
 Workspaces () {
-	TAG=$(cat /tmp/tag)
-	
+	TAG=$(cat /tmp/tag)	
 	if [ $TAG -eq 1 ]; then
 		echo -n " O  o  o  o  o  o  o  o  o "
 	elif [ $TAG -eq 2 ]; then
@@ -66,10 +64,16 @@ Workspaces () {
 	fi
 }
 
-	while true; do
+UpdateTag () {
+	
+	TAG=$(/home/$USER/repo/configurations/desktop/lemonbar/client "get")
 
+}
+
+	while true; do
+		
 		echo -e "%{l} %{F#000000}%{B#d19a3f} $(Workspaces) %{r}%{F#000000}%{B#d19a3f} | $(ActiveWindow) | Mem: $(Memory) | CPU: $(Cpu) | Bat: $(Battery) | $(Clock) %{F-}%{B-}"
-			        sleep 1
+			        sleep 0.01
 			done | \
 			lemonbar -d  \
          		-g ${width}x${height}+${x}+${y} \
