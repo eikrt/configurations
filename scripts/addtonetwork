@@ -1,0 +1,8 @@
+sed -i 's/inet dhcp/inet static/' /etc/network/interfaces
+address="192.168.1.10"
+gateway="192.168.1.254"
+cat >> /etc/network/interfaces << EOF
+    address address
+    gateway gateway
+    dns-nameserver 1.1.1.1
+EOF
