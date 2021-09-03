@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bg=$(ls $HOME/repo/configurations/media/bg/ |shuf -n 1)
-xwallpaper --zoom $HOME/repo/configurations/media/bg/$bg
+bg=$(ls "$HOME"/repo/configurations/media/bg/ |shuf -n 1)
+xwallpaper --zoom "$HOME"/repo/configurations/media/bg/$bg
 

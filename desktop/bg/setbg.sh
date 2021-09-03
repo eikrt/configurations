@@ -1,1 +1,1 @@
-feh --randomize --bg-fill /home/eino/repo/configurations/media/baroque/*
+feh --randomize --bg-fill $CONF_PATH/media/baroque/*

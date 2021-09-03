@@ -1,4 +1,4 @@
 #!/bin/bash
 
-mkdir -p $HOME/backup
-cp $HOME $HOME/backup
+mkdir -p "$HOME"/backup
+cp "$HOME" "$HOME"/backup

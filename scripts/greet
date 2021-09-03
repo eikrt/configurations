@@ -1,1 +1,16 @@
 figlet "Hello $USER"
+printf "\
+1. Fix monitor output\n\
+2. exit "
+
+read userinput
+
+if [ userinput == "1" ]; then
+	echo "Executing fix-monitors"
+	$CONF_PATH/fix-monitors
+	echo "fix-monitors complete"
+
+elif [ userinput == "2" ]; then
+	exit 0
+fi
+

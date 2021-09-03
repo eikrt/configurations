@@ -8,5 +8,9 @@ My configurations and scripts
 
 ## Dependencies
 
-```compton, feh, acpi, lemonbar```
+```compton, feh, acpi, lemonbar, imagemagick```
+
+## Other useful programs
+
+```shellcheck```
 
