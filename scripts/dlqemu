@@ -3,4 +3,3 @@ file=debian-11.0.0-amd64-netinst.iso
 url=https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/$file
 wget "$url"
 qemu-img create hd.img 750M
-qemu -cdrom $file -hda hd.img -boot d
