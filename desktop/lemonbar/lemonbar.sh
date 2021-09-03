@@ -24,12 +24,8 @@ ActiveWindow(){
 }
 
 Cpu(){
-    c=$(top -bn1 | grep "Cpu(s)" | \
-           sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | \
-           awk '{print 100 - $1}')
-    line="    "
-    printf "${line:${#c}}""%s %s" $c%
 
+	mpstat | awk 'BEGIN { FS = "[ \t]+"} ; END {print $3 "%"}'
 
 }
 Memory(){
