@@ -1,5 +1,3 @@
-#!/bin/ash
-
 width=1920
 height=18
 x=0

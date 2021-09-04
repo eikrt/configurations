@@ -8,7 +8,7 @@ My configurations and scripts
 
 ## Dependencies
 
-```compton, feh, acpi, lemonbar, imagemagick```
+```compton, feh, acpi, lemonbar, imagemagick, mpstat```
 
 ## Other useful programs
 
