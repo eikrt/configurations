@@ -11,6 +11,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'tpope/vim-fugitive'
+Plug 'beautify-web/js-beautify'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions=[ 'coc-omnisharp' ]
 call plug#end()
 
 
