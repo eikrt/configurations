@@ -19,7 +19,7 @@ call plug#end()
 
 
 autocmd VimEnter * RainbowParentheses
-packadd! dracula | colorscheme dracula
+colorscheme dracula
 let g:coc_global_extensions = [
 	      \'coc-go',
 	      \'coc-python',

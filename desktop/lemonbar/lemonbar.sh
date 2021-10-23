@@ -1,4 +1,4 @@
-width=1920
+width=$(xdpyinfo | awk '/dimensions/{print $2}' |awk -F 'x' '{print $1}')
 height=18
 x=0
 y=0

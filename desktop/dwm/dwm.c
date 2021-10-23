@@ -44,7 +44,6 @@
 
 #include "drw.h"
 #include "util.h"
-#include "../repo/configurations/programs/lemonsocket/client/lemonclient.h"
 /* macros */
 #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
 #define CLEANMASK(mask)         (mask & ~(numlockmask|LockMask) & (ShiftMask|ControlMask|Mod1Mask|Mod2Mask|Mod3Mask|Mod4Mask|Mod5Mask))
@@ -2056,7 +2055,14 @@ updatewmhints(Client *c)
 void
 view(const Arg *arg)
 {
-	sendTag(arg->ui);
+	FILE *fptr;
+	fptr = fopen("/tmp/tag", "w");
+	if (fptr == NULL) {
+		printf("Error opening /tmp/tag");
+		exit(1);
+	}
+	fprintf(fptr, "%i", (int) arg->ui);
+	fclose(fptr);
 	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
 		return;
 	selmon->seltags ^= 1; /* toggle sel tagset */
