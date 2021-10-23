@@ -1,0 +1,6 @@
+sudo mkdir /nix
+curl -L https://nixos.org/nix/install | sh -s # install nix
+mkdir /home/$MAIN_USER/.config/nixpkgs
+ln -s /home/$MAIN_USER/repo/configurations/system/nix/config.nix /home/$MAIN_USER/.config/nixpkgs/config.nix
+echo "if [ -e /home/eino/.nix-profile/etc/profile.d/nix.sh ]; then . /home/eino/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer" >> /home/$MAIN_USER/.bashrc
+ln -s /home/$MAIN_USER/repo/configurations/system/nix/default.nix /home/$MAIN_USER/default.nix
