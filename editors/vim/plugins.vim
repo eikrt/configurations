@@ -14,6 +14,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'beautify-web/js-beautify'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'chun-yang/auto-pairs'
 let g:coc_global_extensions=[ 'coc-omnisharp' ]
 call plug#end()
 

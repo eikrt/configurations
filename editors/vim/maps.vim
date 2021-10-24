@@ -4,13 +4,6 @@
 :map <C-T> :NERDTreeToggle<CR>
 nnoremap <silent> <C-f> :Ag<CR>
 " auto close brackets
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 " tab complete
 set backspace=indent,eol,start
 function! s:check_back_space() abort
