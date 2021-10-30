@@ -20,8 +20,11 @@
 		xdotool
 		neofetch
 		xfce.xfce4-terminal
+		xfce.xfce4-screenshooter
+		scrot
 		silver-searcher
 		nodejs
+		fceux
 			
 	];
 	pathsToLink = [ "/share" "/bin" ];

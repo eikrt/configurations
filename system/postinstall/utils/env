@@ -1,1 +1,4 @@
 MAIN_USER="eino"
+NIX_CONF_DIR="/home/$MAIN_USER/.config/nixpkgs/"
+CONF_DIR="/home/$MAIN_USER/repo/configurations"
+DWM_DIR="/home/$MAIN_USER/dwm"

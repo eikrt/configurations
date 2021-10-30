@@ -1,2 +1,2 @@
-ln -s /home/$MAIN_USER/configurations/desktop/x/.xinitrc /home/$MAIN_USER/.xinitrc
-ln -s /home/$MAIN_USER/configurations/desktop/x/lightdm/dwm.session /usr/share/xsessions/dwm.desktop # this is not used since lightdm is disabled
+ln -s $CONF_DIR/desktop/x/.xinitrc /home/$MAIN_USER/.xinitrc
+ln -s $CONF_DIR/desktop/x/lightdm/dwm.session /usr/share/xsessions/dwm.desktop # this is not used since lightdm is disabled

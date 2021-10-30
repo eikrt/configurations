@@ -1,3 +1,3 @@
-ln -s /home/$MAIN_USER/repo/configurations/editors/vim/.vimrc /home/$MAIN_USER/.vimrc
+ln -s $CONF_DIR/editors/vim/.vimrc /home/$MAIN_USER/.vimrc
 
-mkdir -p /home/$MAIN_USER/.vim/pack/themes/start
+mkdir -p $HOME/.vim/pack/themes/start

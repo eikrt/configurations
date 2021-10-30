@@ -1,9 +1,9 @@
 sudo apt install libx11-dev libxft-dev libxinerama-dev build-essential
-git clone https://git.suckless.org/dwm /home/$MAIN_USER/dwm
-rm /home/$MAIN_USER/dwm/dwm.c
-ln -s /home/$MAIN_USER/repo/configurations/desktop/dwm/config.h /home/$MAIN_USER/dwm/config.h
-ln -s /home/$MAIN_USER/repo/configurations/desktop/dwm/dwm.c /home/$MAIN_USER/dwm/dwm.c
+git clone https://git.suckless.org/dwm $DWM_DIR
+rm $DWM_DIR/dwm.c
+ln -s $CONF_DIR/desktop/dwm/config.h $DWM_DIR/config.h
+ln -s $CONF_DIR/desktop/dwm/dwm.c $DWM_DIR/dwm.c
 
-cd /home/$MAIN_USER/dwm
+cd $DWM_DIR
 sudo make clean install
-cd /home/$MAIN_USER
+cd $HOME
