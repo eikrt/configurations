@@ -37,5 +37,6 @@
 	pathsToLink = [ "/share" "/bin" ];
 	};	
 };
+allowUnfree = true;
 }
 
