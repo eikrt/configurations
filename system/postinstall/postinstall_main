@@ -5,7 +5,9 @@ sudo apt install curl
 SYSTEM="main"
 source ./utils/env
 # nix install
-source ./utils/nix
+source ./utils/nix $SYSTEM
+# install flatpak
+source ./utils/flatpak
 # x configuration
 source ./utils/x
 # vim configuration

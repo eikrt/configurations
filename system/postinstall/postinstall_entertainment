@@ -4,7 +4,8 @@ sudo apt install curl
 SYSTEM="entertainment"
 source ./utils/env
 # nix install
-source ./utils/nix
+source ./utils/nix $SYSTEM
 # vim configuration
 source ./utils/vim
-
+# emulation environment configuration
+source ./utils/emu
