@@ -2,6 +2,7 @@
 
 sudo systemctl disable lightdm
 sudo apt install curl
+SYSTEM="base"
 
 source ./utils/env
 # nix install

@@ -1,8 +1,17 @@
 
 
 sudo mkdir /nix
+sudo chown -R /nix
 curl -L https://nixos.org/nix/install | sh -s # install nix
 mkdir $NIX_CONF_DIR
-ln -s $CONF_DIR/system/nix/config.nix $NIX_CONF_DIR/config.nix
+
 echo "if [ -e /home/eino/.nix-profile/etc/profile.d/nix.sh ]; then . /home/eino/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer" >> $HOME/.bashrc
+if [ $NAME -eq "main" ] then
+	ln -s $CONF_DIR/system/nix/config_main.nix $NIX_CONF_DIR/config.nix
+
+fi
+if [ $NAME -eq "entertainment" ] then
+	
+	ln -s $CONF_DIR/system/nix/config_entertainment.nix $NIX_CONF_DIR/config.nix
+fi
 ln -s $CONF_DIR/system/nix/default.nix $HOME/default.nix
