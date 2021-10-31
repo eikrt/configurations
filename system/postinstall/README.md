@@ -13,10 +13,12 @@ These steps presume you have latest debian installed
 
 2. Install git
 
+	sudo apt install git
+
 3. Clone configurations git repository
 
 	git clone https://github.com/eikrt/configurations
 
-4. Run configurations/system/postinstall/postinstall.sh
+4. Run configurations/system/postinstall/postinstall.*
 
 5. Enjoy!

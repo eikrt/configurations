@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo apt install curl
+
+source ./utils/env
+# nix install
+source ./utils/nix
+# vim configuration
+source ./utils/vim
+

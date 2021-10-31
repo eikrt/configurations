@@ -12,6 +12,4 @@ source ./utils/x
 source ./utils/vim
 # dwm configuration
 source ./utils/dwm
-# vim configuration
-source ./utils/vim
 
