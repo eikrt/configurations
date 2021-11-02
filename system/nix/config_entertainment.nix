@@ -25,6 +25,7 @@
 		mupen64plus
 		kega-fusion
 		dosbox
+		wine
 		mpv
 		youtube-dl
 		spotify-tui
