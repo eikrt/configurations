@@ -10,7 +10,6 @@
 
 
 	paths = [
-		
 		vim
 		chromium
 		acpi
@@ -22,10 +21,8 @@
 		scrot
 		silver-searcher
 		nodejs
-		fceux
 		snes9x-gtk
 		mupen64plus
-		dolphinEmu
 		kega-fusion
 		dosbox
 		mpv
