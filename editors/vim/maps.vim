@@ -14,4 +14,7 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
-
+" whitespace mode
+:map <C-W> :set list <CR>
+:map <C-W> :syntax on <CR>
+:map <C-W> :set syntax=whitespace <CR>
