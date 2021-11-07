@@ -11,6 +11,7 @@
 
 	paths = [
 		vim
+		emacs
 		chromium
 		acpi
 		sysstat

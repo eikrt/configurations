@@ -15,6 +15,9 @@ Plug 'beautify-web/js-beautify'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chun-yang/auto-pairs'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax' 
+Plug 'vim-pandoc/vim-rmarkdown'
 let g:coc_global_extensions=[ 'coc-omnisharp' ]
 call plug#end()
 

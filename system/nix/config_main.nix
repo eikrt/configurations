@@ -12,6 +12,7 @@
 	paths = [
 		
 		vim
+		emacs
 		chromium
 		lemonbar
 		acpi

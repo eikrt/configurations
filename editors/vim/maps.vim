@@ -2,6 +2,7 @@
 :imap jj <ESC>
 :map <C-E> :Explore <CR>
 :map <C-T> :NERDTreeToggle<CR>
+:map <C-K> :RMarkdown<CR>
 nnoremap <silent> <C-f> :Ag<CR>
 " auto close brackets
 " tab complete
@@ -14,4 +15,4 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
-
+autocmd Filetype python nnoremap <buffer> <F6> :w<CR>:ter python3 "%"<CR>

@@ -1,0 +1,5 @@
+sudo apt install pandoc
+
+sudo apt install littler
+# R -> install.packages("rmarkdown")
+# install.packages("ggplot2")

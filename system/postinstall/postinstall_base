@@ -13,4 +13,6 @@ source ./utils/x
 source ./utils/vim
 # dwm configuration
 source ./utils/dwm
+# programming configuration
+source ./utils/prgr
 
