@@ -16,3 +16,7 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 autocmd Filetype python nnoremap <buffer> <F6> :w<CR>:ter python3 "%"<CR>
+" whitespace mode
+:map <C-W> :set list <CR>
+:map <C-W> :syntax on <CR>
+:map <C-W> :set syntax=whitespace <CR>
