@@ -17,6 +17,6 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 autocmd Filetype python nnoremap <buffer> <F6> :w<CR>:ter python3 "%"<CR>
 " whitespace mode
-:map <C-W> :set list <CR>
-:map <C-W> :syntax on <CR>
-:map <C-W> :set syntax=whitespace <CR>
+:map <C-U> :set list <CR>
+:map <C-U> :syntax on <CR>
+:map <C-U> :set syntax=whitespace <CR>
