@@ -14,6 +14,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'beautify-web/js-beautify'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
 Plug 'chun-yang/auto-pairs'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax' 
