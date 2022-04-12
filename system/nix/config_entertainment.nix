@@ -10,7 +10,6 @@
 
 
 	paths = [
-		vim
 		emacs
 		chromium
 		acpi
