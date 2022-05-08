@@ -10,8 +10,6 @@
 
 
 	paths = [
-		emacs
-		chromium
 		acpi
 		sysstat
 		feh
