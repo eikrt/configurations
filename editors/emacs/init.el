@@ -28,7 +28,13 @@
   (package-install 'auto-complete))
 (unless (package-installed-p 'shell-pop)
   (package-install 'shell-pop))
+(unless (package-installed-p 'js2-mode)
+  (package-install 'js2-mode))
 
+; Javascript
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . js2-mode))
 
 ; Windmove
 (when (fboundp 'windmove-default-keybindings)
@@ -100,7 +106,9 @@
  '(shell-pop-autocd-to-working-dir t)
  '(shell-pop-default-directory "~/repo")
  '(shell-pop-universal-key "C-x s")
- '(shell-pop-window-position "bottom"))
+ '(shell-pop-window-position "bottom")
+ '(warning-suppress-log-types '((comp) (comp)))
+ '(warning-suppress-types '((comp) (comp))))
 
 (require 'dashboard)
 (dashboard-setup-startup-hook)

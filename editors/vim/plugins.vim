@@ -19,6 +19,9 @@ Plug 'chun-yang/auto-pairs'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax' 
 Plug 'vim-pandoc/vim-rmarkdown'
+Plug 'pechorin/any-jump.vim'
+Plug 'eslint/eslint'
+
 let g:coc_global_extensions=[ 'coc-omnisharp' ]
 call plug#end()
 
