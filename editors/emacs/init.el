@@ -30,6 +30,8 @@
   (package-install 'shell-pop))
 (unless (package-installed-p 'js2-mode)
   (package-install 'js2-mode))
+(unless (package-installed-p 'rjsx-mode)
+  (package-install 'rjsx-mode))
 
 ; Javascript
 (require 'js2-mode)
