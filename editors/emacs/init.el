@@ -32,6 +32,12 @@
   (package-install 'js2-mode))
 (unless (package-installed-p 'rjsx-mode)
   (package-install 'rjsx-mode))
+(unless (package-installed-p 'evil-matchit)
+  (package-install 'evil-matchit))
+
+; Matchit
+(require 'evil-matchit)
+(global-evil-matchit-mode 1)
 
 ; Javascript
 (require 'js2-mode)
@@ -69,6 +75,8 @@
 (global-set-key (kbd "C-x t") 'treemacs)
 (global-set-key (kbd "C-x g") 'dumb-jump-go)
 (global-set-key (kbd "C-x l") 'helm-locate)
+(global-set-key (kbd "C-x f") 'rgrep)
+(global-set-key (kbd "C-x b") 'eshell)
 (global-set-key (kbd "M-x") 'helm-M-x)
 ; Dashboard
 ;; Set the title
