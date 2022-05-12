@@ -38,6 +38,23 @@
   (package-install 'flycheck))
 (unless (package-installed-p 'evil-matchit)
   (package-install 'evil-matchit))
+(unless (package-installed-p 'cider)
+  (package-install 'cider))
+(unless (package-installed-p 'go-mode)
+  (package-install 'go-mode))
+(unless (package-installed-p 'paredit)
+  (package-install 'paredit))
+(unless (package-installed-p 'undo-tree)
+  (package-install 'undo-tree))
+
+
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 ; Flycheck
 (global-flycheck-mode 1)
 (setq-default flycheck-disabled-checkers
@@ -146,6 +163,7 @@
  '(warning-suppress-log-types '((comp) (comp)))
  '(warning-suppress-types '((comp) (comp))))
 
+; Undo-tree
 (require 'dashboard)
 (dashboard-setup-startup-hook)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
