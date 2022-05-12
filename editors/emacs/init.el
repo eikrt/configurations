@@ -3,6 +3,8 @@
              '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 (package-refresh-contents)
+; Backup files
+(setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
 
 ;; Download Evil
 (unless (package-installed-p 'evil)
@@ -32,9 +34,33 @@
   (package-install 'js2-mode))
 (unless (package-installed-p 'rjsx-mode)
   (package-install 'rjsx-mode))
+(unless (package-installed-p 'flycheck)
+  (package-install 'flycheck))
 (unless (package-installed-p 'evil-matchit)
   (package-install 'evil-matchit))
+; Flycheck
+(global-flycheck-mode 1)
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-jshint)))
+(setq-default flycheck-temp-prefix ".flycheck")
+;; disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+	  '(json-jsonlist)))
 
+;; use local eslint from node_modules before global
+;; http://emacs.stackexchange.com/questions/21205/flycheck-with-file-relative-eslint-executable
+(defun my/use-eslint-from-node-modules ()
+(let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 ; Matchit
 (require 'evil-matchit)
 (global-evil-matchit-mode 1)
@@ -72,11 +98,11 @@
 (set-frame-font "Ubuntu Mono 12" nil t)
 
 ; Keybindings
-(global-set-key (kbd "C-x t") 'treemacs)
-(global-set-key (kbd "C-x g") 'dumb-jump-go)
-(global-set-key (kbd "C-x l") 'helm-locate)
-(global-set-key (kbd "C-x f") 'rgrep)
-(global-set-key (kbd "C-x b") 'eshell)
+(global-set-key (kbd "C-c t") 'treemacs)
+(global-set-key (kbd "C-c g") 'dumb-jump-go)
+(global-set-key (kbd "C-c l") 'helm-locate)
+(global-set-key (kbd "C-c f") 'rgrep)
+(global-set-key (kbd "C-c b") 'shell)
 (global-set-key (kbd "M-x") 'helm-M-x)
 ; Dashboard
 ;; Set the title
