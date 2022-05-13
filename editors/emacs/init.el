@@ -42,21 +42,18 @@
   (package-install 'cider))
 (unless (package-installed-p 'go-mode)
   (package-install 'go-mode))
-(unless (package-installed-p 'paredit)
-  (package-install 'paredit))
 (unless (package-installed-p 'undo-tree)
   (package-install 'undo-tree))
+(unless (package-installed-p 'smartparens)
+  (package-install 'smartparens))
 
+; Smartparens
 
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(smartparens-global-mode t)
+
 ; Flycheck
 (global-flycheck-mode 1)
+
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
     '(javascript-jshint)))
@@ -149,7 +146,9 @@
     (push 'escape unread-command-events))
        (t (setq unread-command-events (append unread-command-events
                           (list evt))))))))
-
+(require 'undo-tree)
+(evil-set-undo-system 'undo-tree)
+(global-undo-tree-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
