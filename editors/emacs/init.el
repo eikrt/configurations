@@ -48,8 +48,13 @@
   (package-install 'smartparens))
 (unless (package-installed-p 'web-mode)
   (package-install 'web-mode))
+(unless (package-installed-p 'prettier)
+  (package-install 'prettier))
 ;(unless (package-installed-p 'lsp-mode)
 ;  (package-install 'lsp-mode))
+
+; Prettier
+(setenv "NODE_PATH" "/usr/local/lib/node_modules")
 
 ; Smartparens
 
@@ -94,6 +99,8 @@
 ; Matchit
 (require 'evil-matchit)
 (global-evil-matchit-mode 1)
+;Autosave
+(setq auto-save-default nil)
 
 ; Javascript
 (require 'js2-mode)
