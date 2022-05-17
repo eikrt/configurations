@@ -53,6 +53,10 @@
 ;(unless (package-installed-p 'lsp-mode)
 ;  (package-install 'lsp-mode))
 
+; Undo-tree
+;; Prevent undo tree files from polluting your git repo
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+
 ; Prettier
 (setenv "NODE_PATH" "/usr/local/lib/node_modules")
 
