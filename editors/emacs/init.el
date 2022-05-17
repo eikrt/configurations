@@ -46,12 +46,17 @@
   (package-install 'undo-tree))
 (unless (package-installed-p 'smartparens)
   (package-install 'smartparens))
+(unless (package-installed-p 'web-mode)
+  (package-install 'web-mode))
+;(unless (package-installed-p 'lsp-mode)
+;  (package-install 'lsp-mode))
 
 ; Smartparens
 
 (smartparens-global-mode t)
 
 ; Flycheck
+(require 'flycheck)
 (global-flycheck-mode 1)
 
 (setq-default flycheck-disabled-checkers
@@ -62,26 +67,39 @@
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
 	  '(json-jsonlist)))
+(defun my/use-eslint-from-node-modules ()
+  (let ((root (locate-dominating-file
+               (or (buffer-file-name) default-directory)
+               (lambda (dir)
+                 (let ((eslint (expand-file-name "node_modules/eslint/bin/eslint.js" dir)))
+                  (and eslint (file-executable-p eslint)))))))
+    (when root
+      (let ((eslint (expand-file-name "node_modules/eslint/bin/eslint.js" root)))
+        (setq-local flycheck-javascript-eslint-executable eslint)))))
+(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+
 
 ;; use local eslint from node_modules before global
 ;; http://emacs.stackexchange.com/questions/21205/flycheck-with-file-relative-eslint-executable
-(defun my/use-eslint-from-node-modules ()
-(let* ((root (locate-dominating-file
-                (or (buffer-file-name) default-directory)
-                "node_modules"))
-         (eslint (and root
-                      (expand-file-name "node_modules/eslint/bin/eslint.js"
-                                        root))))
-    (when (and eslint (file-executable-p eslint))
-      (setq-local flycheck-javascript-eslint-executable eslint))))
-(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+;(defun my/use-eslint-from-node-modules ()
+;(let* ((root (locate-dominating-file
+;                (or (buffer-file-name) default-directory)
+;                "node_modules"))
+;         (eslint (and root
+;                      (expand-file-name "../node_modules/eslint/bin/eslint.js"
+;                                        root))))
+;    (when (and eslint (file-executable-p eslint))
+;      (setq-local flycheck-javascript-eslint-executable eslint))))
+;(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 ; Matchit
 (require 'evil-matchit)
 (global-evil-matchit-mode 1)
 
 ; Javascript
 (require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . js2-mode))
 
 ; Windmove
@@ -160,7 +178,7 @@
  '(shell-pop-universal-key "C-x s")
  '(shell-pop-window-position "bottom")
  '(warning-suppress-log-types '((comp) (comp)))
- '(warning-suppress-types '((comp) (comp))))
+ '(warning-suppress-types '(((unlock-file)) (comp) (comp))))
 
 ; Undo-tree
 (require 'dashboard)

@@ -40,6 +40,8 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-rmarkdown'
 Plug 'Yilin-Yang/vim-markbar'
 Plug 'chentau/marks.nvim'
+Plug 'eslint/eslint'
+
 let g:coc_global_extensions=[ 'coc-omnisharp' ]
 call plug#end()
 
