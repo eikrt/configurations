@@ -53,6 +53,9 @@
 ;(unless (package-installed-p 'lsp-mode)
 ;  (package-install 'lsp-mode))
 
+; Find
+(setq ido-use-filename-at-point nil)
+
 ; Undo-tree
 ;; Prevent undo tree files from polluting your git repo
 (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
